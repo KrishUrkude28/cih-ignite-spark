@@ -2,39 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* CIH Hackathon Design System - Tech-inspired vibrant palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 26% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 23% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 23% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 220 14% 71%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 217 91% 60%;
+
+    /* Tech gradient colors */
+    --gradient-primary-start: 217 91% 60%;
+    --gradient-primary-end: 262 83% 58%;
+    --gradient-secondary-start: 25 95% 53%;
+    --gradient-secondary-end: 217 91% 60%;
+    --gradient-accent-start: 262 83% 58%;
+    --gradient-accent-end: 25 95% 53%;
+
+    /* Hero specific colors */
+    --hero-bg: 220 26% 4%;
+    --hero-accent: 217 91% 60%;
+    --hero-secondary: 262 83% 58%;
+    --hero-orange: 25 95% 53%;
 
     --radius: 0.5rem;
 
@@ -91,6 +103,31 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Tech gradients and animations */
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-primary-start)), hsl(var(--gradient-primary-end)));
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(var(--gradient-secondary-start)), hsl(var(--gradient-secondary-end)));
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--gradient-accent-start)), hsl(var(--gradient-accent-end)));
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-bg)) 0%, 
+      hsl(var(--hero-accent) / 0.1) 25%,
+      hsl(var(--hero-secondary) / 0.1) 50%,
+      hsl(var(--hero-orange) / 0.1) 75%,
+      hsl(var(--hero-bg)) 100%
+    );
   }
 }
 
