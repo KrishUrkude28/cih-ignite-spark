@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +70,11 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button variant="cta" size="sm">
-              Register Now
-            </Button>
+            <Link to="/register">
+              <Button variant="cta" size="sm">
+                Register Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,9 +100,11 @@ const Navigation = () => {
                     {item.label}
                   </button>
                 ))}
-                <Button variant="cta" className="mt-4" onClick={() => setIsOpen(false)}>
-                  Register Now
-                </Button>
+                <Link to="/register">
+                  <Button variant="cta" className="mt-4" onClick={() => setIsOpen(false)}>
+                    Register Now
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

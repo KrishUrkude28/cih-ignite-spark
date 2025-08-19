@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -138,9 +139,11 @@ const ContactSection = () => {
               <p className="text-muted-foreground text-lg max-w-md">
                 Don't wait! Registration closes soon. Secure your spot in Central India's biggest hackathon.
               </p>
-              <Button variant="cta" size="lg" className="animate-glow">
-                Register Your Team Now
-              </Button>
+              <Link to="/register">
+                <Button variant="cta" size="lg" className="animate-glow">
+                  Register Your Team Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
